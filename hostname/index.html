@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="hostnameBuilderApp">
+<head>
+    <title>Hostname Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="hostnameController">
+        <div class="jumbotron">
+            <h3 class="text-center">{{hostname}}</h3>
+        </div>
+        <form role="form">
+            <div class="form-group">
+                <label for="hostnameDomain">Domain</label>
+                <input type="text" class="form-control" id="hostnameDomain" placeholder="example.com" ng-model="domain" ng-change="onChange()">
+            </div>
+            <div class="form-group">
+                <label for="hostnameEnvironment">Environment</label>
+                <select class="form-control" id="hostnameEnvironment" ng-model="environment" ng-change="onChange()">
+                    <option value="" selected>Production</option>
+                    <option value="stage">Staging</option>
+                    <option value="test">Testing</option>
+                    <option value="dev">Development</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hostnameRole">Role</label>
+                <select class="form-control" id="hostnameRole" ng-model="role" ng-change="onChange()">
+                    <option value=""></option>
+                    <optgroup label="Application Servers">
+                        <option value="app">Generic Worker</option>
+                        <option value="java">Java Worker</option>
+                        <option value="node">Node Worker</option>
+                    </optgroup>
+                    <optgroup label="Caching Servers">
+                        <option value="cache">Generic Cache</option>
+                        <option value="memcache">Memcache</option>
+                    </optgroup>
+                    <optgroup label="Database Servers">
+                        <option value="db">Generic Database</option>
+                        <option value="db-master">Master</option>
+                        <option value="db-slave">Slave</option>
+                    </optgroup>
+                    <optgroup label="Operations Servers">
+                        <option value="ops">Multi-use</option>
+                        <option value="deploy">Build Server</option>
+                        <option value="log">Log Parser</option>
+                        <option value="monitor">Monitoring</option>
+                        <option value="munin">Munin</option>
+                        <option value="nagios">Nagios</option>
+                        <option value="puppet">Puppet</option>
+                        <option value="cron">Task Runner (Cron)</option>
+                    </optgroup>
+                    <optgroup label="Proxy Servers">
+                        <option value="proxy">Generic Proxy</option>
+                        <option value="varnish">Varnish</option>
+                    </optgroup>
+                    <optgroup label="Queue Servers">
+                        <option value="queue">Generic Queue</option>
+                        <option value="gearman">Gearman</option>
+                    </optgroup>
+                    <optgroup label="Search Servers">
+                        <option value="search">Generic Search</option>
+                        <option value="solr">Solr</option>
+                        <option value="elasticache">Elasticache</option>
+                    </optgroup>
+                    <optgroup label="Storage Servers">
+                        <option value="storage">Generic Storage</option>
+                        <option value="nfs">File Server (NFS)</option>
+                        <option value="static">Static Resources</option>
+                    </optgroup>
+                    <optgroup label="Web Servers">
+                        <option value="web">Generic Backend</option>
+                        <option value="lighty">Lighttpd Backend</option>
+                        <option value="nginx">Nginx Backend</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hostnameUsername">Username</label>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" id="hostnameUsername" placeholder="jdoe" ng-model="username" ng-change="onChange()">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hostnameBranch">Branch</label>
+                <input type="text" class="form-control" id="hostnameBranch" placeholder="master" ng-model="branch" ng-change="onChange()">
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
