@@ -72,7 +72,7 @@ $(document).ready(function(){
         var root;
     
         // size of the diagram
-        var viewerWidth = $(document).width() - 30;
+        var viewerWidth = $(document).width() - 45;
         var viewerHeight = $(document).height();
     
         var tree = d3.layout.tree()
