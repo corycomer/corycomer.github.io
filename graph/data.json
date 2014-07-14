@@ -1,7 +1,8 @@
 {
     "name": "flare",
-    "children": [{
-        "name": "",
-        "size": 1
-    }]
+    "children": [
+        {"name": "foo"},
+        {"name": "bar"},
+        {"name": "baz"}
+    ]
 }
