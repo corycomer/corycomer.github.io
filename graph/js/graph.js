@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('#panel-toggle').click(function() {
+        e.preventDefault();
         $(this).toggleClass('glyphicon-minus');
         $(this).toggleClass('glyphicon-plus');
     });
@@ -22,11 +23,7 @@ $(document).ready(function(){
     });
     
     $('#graph').click(function() {
-        $('#panel-toggle').click(function() {
-            $(this).toggleClass('glyphicon-minus');
-            $(this).toggleClass('glyphicon-plus');
-        });
-        
+        $('#panel-toggle').click();
         $('#input').collapse('toggle');
     
         $('#tree-container').html('');
