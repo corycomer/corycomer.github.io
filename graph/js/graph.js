@@ -17,6 +17,7 @@ $(document).ready(function(){
     });
     
     $('#graph').click(function() {
+        $('#tree-container').html('');
         var data = jQuery.parseJSON($('#rawData').val())
         
         console.log(data.log);
