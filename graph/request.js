@@ -564,5 +564,5 @@ $('#graph')
         // Layout the tree initially and center on the root node.
         update(root);
         centerNode(root);
-    })
-);
+    });
+    });
