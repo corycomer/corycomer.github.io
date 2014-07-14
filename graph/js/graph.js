@@ -1,14 +1,17 @@
 $(document).ready(function(){
     var placeholder = '1. Open Developer Tools.\n2. Click the Network tab.\n3. Refresh the page.\n4. Right click, Copy All as HAR\n5. Paste here.';
+    $('#rawData').css('color', '#CECECE');
     $('#rawData').html(placeholder);
     $('#rawData').focus(function() {
         if ($(this).val() == placeholder) {
+            $(this).css('color', '#000');
             $(this).html('');
         }
     });
     
     $('#rawData').blur(function() {
         if ($(this).val() == '') {
+            $(this).css('color', '#CECECE');
             $(this).html(placeholder);
         }
     });
