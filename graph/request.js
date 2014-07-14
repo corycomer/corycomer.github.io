@@ -16,6 +16,14 @@ treeJSON = d3.json("reddit.json", function(error, rawData) {
         return find(branch.childen);
     }
 
+    var clip = function(tree) {
+        for (var i = 0; i < tree.children.length; i++) {
+            if (tree.children[i].children.length == 0) {
+                tree.children[i].pop();
+            }
+        }
+    };
+
     for (var i = 0; i < data.log.entries.length; i++) {
         var entry = data.log.entries[i];
         var headers = entry.request.headers.filter(function(e) {return e.name == "Referer"});
@@ -27,7 +35,7 @@ treeJSON = d3.json("reddit.json", function(error, rawData) {
         }
     }
     
-    var treeData = tree;
+    var treeData = clip(tree);
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
