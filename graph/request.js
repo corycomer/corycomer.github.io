@@ -1,5 +1,33 @@
 // Get JSON data
-treeJSON = d3.json("data.json", function(error, treeData) {
+treeJSON = d3.json("reddit.json", function(error, rawData) {
+    var data = rawData;
+    
+    var find = function(branch, node) {
+        if (branch.name == node)
+            return branch;
+        
+        if (branch.children.length == 0)
+            return false;
+        
+        for (var i = 1; i < tree.children.length; i++) {
+            if (branch.children[i].name == node)
+                return branch.children[i];
+        }
+        return find(branch.childen);
+    }
+
+    for (var i = 0; i < data.log.entries.length; i++) {
+        var entry = data.log.entries[i];
+        var headers = entry.request.headers.filter(function(e) {return e.name == "Referer"});
+        if (headers.length == 0) {
+            var tree = { "name": entry.request.url, "node": entry, "children":[] };
+        } else {
+            var branch = find(tree, headers[0].value);
+            branch.children.push({ "name": entry.request.url, "node": entry, "children": [] });
+        }
+    }
+    
+    var treeData = tree;
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
