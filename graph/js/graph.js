@@ -22,6 +22,13 @@ $(document).ready(function(){
     });
     
     $('#graph').click(function() {
+        $('#panel-toggle').click(function() {
+            $(this).toggleClass('glyphicon-minus');
+            $(this).toggleClass('glyphicon-plus');
+        });
+        
+        $('#input').collapse('toggle');
+    
         $('#tree-container').html('');
         var data = jQuery.parseJSON($('#rawData').val())
         
