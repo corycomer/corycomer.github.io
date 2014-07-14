@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    $('#panel-toggle').click(function() {
+        $(this).toggleClass('glyphion-minus');
+        $(this).toggleClass('glyphion-plus');
+    });
+    
     var placeholder = '1. Open Developer Tools.\n2. Click the Network tab.\n3. Refresh the page.\n4. Right click, Copy All as HAR\n5. Paste here.';
     $('#rawData').css('color', '#CECECE');
     $('#rawData').html(placeholder);
@@ -17,6 +22,9 @@ $(document).ready(function(){
     });
     
     $('#graph').click(function() {
+        $(this).toggleClass('glyphion-minus');
+        $(this).toggleClass('glyphion-plus');
+        
         $('#tree-container').html('');
         var data = jQuery.parseJSON($('#rawData').val())
         
