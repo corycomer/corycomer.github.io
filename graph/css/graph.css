@@ -37,6 +37,6 @@
     display: none;
 }
 
-#accordian {
+.panel-group {
     margin-top: 10px;
 }
