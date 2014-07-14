@@ -17,11 +17,12 @@ treeJSON = d3.json("reddit.json", function(error, rawData) {
     }
 
     var clip = function(tree) {
-        for (var i = 0; i < tree.children.length; i++) {
+        for (var i = tree.children.length - 1; i >= 0; i--) {
             if (tree.children[i].children.length == 0) {
-                tree.children[i].pop();
+                tree.children.splice(i, 1);
             }
         }
+        return tree;
     };
 
     for (var i = 0; i < data.log.entries.length; i++) {
