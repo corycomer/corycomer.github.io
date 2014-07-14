@@ -1,8 +1,8 @@
 {
     "name": "flare",
     "children": [
-        {"name": "foo", "size": 3},
-        {"name": "bar", "size": 1},
-        {"name": "baz", "size": 2}
+        {"name": "foo", "size": 1},
+        {"name": "bar", "size": 2},
+        {"name": "baz", "size": 3}
     ]
 }
