@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#panel-toggle').click(function() {
-        e.preventDefault();
+        $(this).preventDefault();
         $(this).toggleClass('glyphicon-minus');
         $(this).toggleClass('glyphicon-plus');
     });
