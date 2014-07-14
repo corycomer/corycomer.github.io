@@ -7,12 +7,21 @@
     <link href="css/graph.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <div class="starter-template">
-    	<textarea id="rawData" class="form-control" rows="6"></textarea>
-    	<button id="graph" type="button" class="btn btn-primary btn-lg btn-block">Graph</button>
-    	<div id="tree-container"></div>
-      </div>
+    <div class="container">    
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="rawData">HAR Output</label>
+                <textarea id="rawData" name="rawData" class="form-control" rows="6"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <p class="text-center">
+                <button id="graph" type="button" class="btn btn-primary btn-lg btn-outline-rounded">Graph</button>
+            </p>
+        </div>
+        <div class="col-lg-12">
+            <div id="tree-container"></div>
+        </div>
     </div>
 	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="//d3js.org/d3.v3.min.js"></script>
