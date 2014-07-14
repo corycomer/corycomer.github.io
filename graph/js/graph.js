@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $('#panel-toggle').click(function(e) {
-        e.preventDefault();
-        e.toggleClass('glyphicon-minus');
-        e.toggleClass('glyphicon-plus');
+        console.log($(this));
+        $(this).toggleClass('glyphicon-minus');
+        $(this).toggleClass('glyphicon-plus');
     });
     
     var placeholder = '1. Open Developer Tools.\n2. Click the Network tab.\n3. Refresh the page.\n4. Right click, Copy All as HAR\n5. Paste here.';
