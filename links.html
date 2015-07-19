@@ -2,26 +2,29 @@
 <head>
   <title>Links</title>
   <script>
-    var links = [
-      { title: "Burnout amongst developers: an industry disease?", url: "https://jaxenter.com/burnout-amongst-developers-an-industry-disease-118357.html" }
-    ];
     (function(window){
       var state = document.readyState;
       if (state !== 'interactive' && state !== 'complete') {
         return setTimeout(arguments.callee, 50, window);
       }
       
-      var content = document.getElementById("content");
-      var list = document.createElement("ul");
-      links.forEach(function(link) {
-        var item = document.createElement("li");
-        var anchor = document.createElement("a");
-        anchor.href = link.url;
-        anchor.innerHTML = link.title;
-        item.appendChild(anchor);
-        list.appendChild(item);
-      });
-      content.appendChild(list);
+      function loadLinks(links) {
+        var content = document.getElementById("content");
+        var list = document.createElement("ul");
+        links.forEach(function(link) {
+          var item = document.createElement("li");
+          var anchor = document.createElement("a");
+          anchor.href = link.url;
+          anchor.innerHTML = link.title;
+          item.appendChild(anchor);
+          list.appendChild(item);
+        });
+        content.appendChild(list);
+      }
+      
+      var script = document.createElement("script");
+      script.src = "/links.json?callback=loadLinks";
+      document.getElementByTagName("head")[0].appendChild(script);
     })(window);
   </script>
 </head>
