@@ -8,7 +8,7 @@
         return setTimeout(arguments.callee, 50, window);
       }
       
-      function loadLinks(links) {
+      window.loadLinks = function loadLinks(links) {
         var content = document.getElementById("content");
         var list = document.createElement("ul");
         links.forEach(function(link) {
