@@ -6,6 +6,11 @@
       { title: "Burnout amongst developers: an industry disease?", url: "https://jaxenter.com/burnout-amongst-developers-an-industry-disease-118357.html" }
     ];
     (function(window){
+      var state = document.readyState;
+      if (state !== 'interactive' && state !== 'complete') {
+        return setTimeout(arguments.callee, 50, window);
+      }
+      
       var content = document.getElementById("content");
       var list = document.createElement("ul");
       links.forEach(function(link) {
