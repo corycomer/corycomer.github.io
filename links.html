@@ -1,12 +1,26 @@
 <html>
 <head>
   <title>Links</title>
+  <script>
+    var links = [
+      { title: "Burnout amongst developers: an industry disease?", url: "https://jaxenter.com/burnout-amongst-developers-an-industry-disease-118357.html" }
+    ];
+    (function(window){
+      var content = document.getElementById("content");
+      var list = document.createElement("ul");
+      links.forEach(function(link) {
+        var item = document.createElement("li");
+        var anchor = document.createElement("a");
+        anchor.href = link.url;
+        anchor.innerHTML = link.title;
+        item.appendChild(anchor);
+        list.appendChild(item);
+      });
+      content.appendChild(list);
+    })(window);
+  </script>
 </head>
 <body>
-  <ul>
-    <li>
-      <a href="https://jaxenter.com/burnout-amongst-developers-an-industry-disease-118357.html">Burnout amongst developers: an industry disease?</a>
-    </li>
-  </ul>
+  <div id="content"/>
 </body>
 </html>
