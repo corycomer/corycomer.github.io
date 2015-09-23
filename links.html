@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Links</title>
+  <script>
+    (function(window){
+      var state = document.readyState;
+      if (state !== 'interactive' && state !== 'complete') {
+        return setTimeout(arguments.callee, 50, window);
+      }
+      
+      window.loadLinks = function loadLinks(links) {
+        var content = document.getElementById("content");
+        var list = document.createElement("ul");
+        links.forEach(function(link) {
+          var item = document.createElement("li");
+          var anchor = document.createElement("a");
+          anchor.href = link.url;
+          anchor.innerHTML = link.title;
+          item.appendChild(anchor);
+          list.appendChild(item);
+        });
+        content.appendChild(list);
+      }
+      
+      var script = document.createElement("script");
+      script.src = "/links.json?callback=loadLinks";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })(window);
+  </script>
+</head>
+<body>
+  <div id="content"/>
+</body>
+</html>

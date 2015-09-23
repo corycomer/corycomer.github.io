@@ -1,0 +1,10 @@
+loadLinks([
+  {
+    "title": "What motivates developers? (Hint: probably not money)",
+    "url": "https://jaxenter.com/motivates-developers-hint-probably-money-113347.html"
+  },
+  {
+    "title": "Burnout amongst developers: an industry disease?",
+    "url": "https://jaxenter.com/burnout-amongst-developers-an-industry-disease-118357.html"
+  }
+]);
